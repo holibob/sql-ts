@@ -1,4 +1,4 @@
-import { Config, Column, Table, Database } from './Typings'
+import { Config, Column, Table, Database, Enum, EnumValue } from './Typings'
 import * as ConnectionFactory from './ConnectionFactory'
 import * as DatabaseTasks from './DatabaseTasks'
 import * as ConfigTasks from './ConfigTasks'
@@ -52,4 +52,4 @@ export default {
   toTypeScript,
 };
 
-export { toObject, fromObject, toTypeScript, Config, Column, Table, Database };
+export { toObject, fromObject, toTypeScript, Config, Column, Table, Database, Enum, EnumValue };
