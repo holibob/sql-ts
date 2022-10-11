@@ -81,6 +81,12 @@ export function generateFullColumnName (tableName: string, schemaName: string, c
  * @returns {string}
  */
  export function convertType (column: ColumnDefinition, table: TableDefinition, config: Config, dialect: string): string {
+  if (typeof config.typeOverrides === "function") {
+    const convertedType = config.typeOverrides(column, table);
+    if (convertedType) {
+      return convertedType;
+    }
+  }
   if (column.isEnum) {
     return convertEnumType(column, config)
   }

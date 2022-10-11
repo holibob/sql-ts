@@ -37,9 +37,11 @@ export interface Config extends Knex.Config {
   typeMap?: {
     [key: string]: string[]
   }
-  typeOverrides?: { 
-    [key: string]: string 
-  },
+  typeOverrides?:
+    | {
+      [key: string]: string
+    }
+    | ((columnDefinition: ColumnDefinition, tableDefinition: TableDefinition) => string | undefined),
   additionalProperties?: { 
     [key: string]: string[]
   },
